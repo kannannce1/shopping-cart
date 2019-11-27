@@ -1,0 +1,53 @@
+<div class="container" style="padding-top: 50px;" *ngIf="productItemData">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+        <h3 class="my-4">Category</h3>
+        <div class="list-group">
+          <span  class="list-group-item sub-filter"  [ngClass]= "highLightShirt? 'active' : ''">Shirts</span>
+          <span  class="list-group-item sub-filter"  [ngClass]= "highLightTShirt? 'active' : ''">T-Shirts</span>
+        
+        </div>
+        <div>
+            
+        </div>
+      </div>
+      
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src="{{productItemData.productImg}}" alt="">
+          <div class="card-body">
+            <h3 class="card-title">{{productItemData.productName}}</h3>
+            <h4>{{productItemData.productPrice | currency}}</h4>
+            <p class="card-text">{{productItemData.productDescription}}</p>
+           
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            Cart Section
+          </div>
+          <div class="card-body">
+            <div class ="form-group">
+            <label for="product name">Quantity Required</label>
+           <input type="number" name="orderQuality" class="form-control" style="width: 10%;" #orderQuality>
+           <span class="text-danger" *ngIf="showQualityError">Enter order Quality</span>
+           </div>
+            <button class="btn btn-success" (click) = addToCart(productItemData,orderQuality.value);>Add to Cart</button>
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->

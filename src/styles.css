@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+a{
+    color: black
+}
+
+.sub-filter{
+    cursor: pointer;
+}
+input[type="number"] {
+    text-align: center;
+  }
